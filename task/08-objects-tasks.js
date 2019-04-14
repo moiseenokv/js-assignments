@@ -60,10 +60,7 @@ function getJSON(obj) {
  *
  */
 function fromJSON(proto, json) {
-    var jsonObj = JSON.parse(json);
-    obj2 = new jsonObj;
-    //obj2.prototype = Object.create(proto);
-    return obj2;
+    throw new Error('Not implemented');
 }
 
 

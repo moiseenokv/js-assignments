@@ -145,20 +145,16 @@ function isTriangle(a,b,c) {
  */
 function doRectanglesOverlap(rect1, rect2) {
     
- /*   if((rect1.left + rect1.width)<rect2.left){
-        
+   if((rect1.left + rect1.width)<rect2.left || ((rect2.left + rect2.width)<rect1.left)  ||((rect1.top + rect1.height)<rect2.top) || ((rect2.top + rect2.height)<rect1.top)){
+        return false;
     }
 
-    ((rect2.left + rect2.width)<rect1.left)
-
-    ((rect1.top + rect1.height)<rect2.top)
-
-    ((rect2.top + rect2.height)<rect1.top)
+    return true;
 
 
 
 
-    
+    /*
 
 if (X1+W1<X2 or X2+W2<X1 or Y1+H1<Y2 or Y2+H2<Y1):
 Intersection = Empty
@@ -195,7 +191,15 @@ Intersection = Not Empty */
  *   
  */
 function isInsideCircle(circle, point) {
-    throw new Error('Not implemented');
+    //throw new Error('Not implemented');
+ 
+        var dist_points = (point.x - circle.center.x) * (point.x - circle.center.x) + (point.y - circle.center.y) * (point.y - circle.center.y);
+        var r = circle.radius*circle.radius;
+        if (dist_points < r) {
+            return true;
+        }
+        return false;
+    
 }
 
 
@@ -254,7 +258,8 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+    //throw new Error('Not implemented');
+     return str.split("").reverse().join("");
 }
 
 
@@ -271,7 +276,8 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    //throw new Error('Not implemented');
+    return parseFloat(num.toString().split('').reverse().join('')) * Math.sign(num)
 }
 
 

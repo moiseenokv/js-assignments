@@ -138,6 +138,13 @@ function getRegexForSSN() {
  */
 function getPasswordValidator(minLength) {
    throw new Error('Not implemented');
+   return {
+      test: function (regex) {
+         var oper = /^(?!000|666)[0-8][0-9]{2}-(?!00)[0-9]{2}-(?!0000)[0-9]{8}$/.test(regex);
+         //console.log(regex, oper);
+          return oper
+      }
+  }
 }
 
 
